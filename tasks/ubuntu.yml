@@ -10,8 +10,8 @@
     state: present
   register: result
   until: '"failed" not in result'
-  retries: 5
-  delay: 10
+  retries: 3
+  delay: 5
   when: not yarn_repofile_result.stat.exists
 
 - name: Import YARN APT key.
@@ -20,6 +20,6 @@
     state: present
   register: result
   until: '"failed" not in result'
-  retries: 5
-  delay: 10
+  retries: 3
+  delay: 5
   when: not yarn_repofile_result.stat.exists

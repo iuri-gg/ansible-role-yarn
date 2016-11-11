@@ -1,0 +1,48 @@
+Ansible Role: YARN Repository
+=========
+
+[![Build Status](https://travis-ci.org/ocha/ansible-role-repo-yarn.svg?branch=master)](https://travis-ci.org/ocha/ansible-role-repo-yarn)
+
+Installs the [YARN repository](https://yarnpkg.com) for Ubuntu/RHEL/CentOS.
+
+Requirements
+------------
+
+This role only runs on Ubuntu, RHEL and its derivatives
+
+Role Variables
+--------------
+
+Available variables are listed below, along with default values (see `defaults/main.yml`):
+
+    yarn_debian_repo_url: "http://dl.yarnpkg.com/debian/ stable main"
+    yarn_debian_repo_gpg_key_url: "http://dl.yarnpkg.com/debian/pubkey.gpg"
+    yarn_rhel_repo_url: "https://dl.yarnpkg.com/rpm/yarn.repo"
+    yarn_rhel_repo_gpg_key_url: "https://dl.yarnpkg.com/rpm/pubkey.gpg"
+
+Generally, these should not be changed, but if this role is out of date, or if you need a very specific version, these can be overridden.
+
+
+Dependencies
+------------
+
+None.
+
+Example Playbook
+----------------
+
+Including an example of how to use your role (for instance, with variables passed in as parameters) is always nice for users too:
+
+    - hosts: servers
+      roles:
+         - ocha.repo-yarn
+
+License
+-------
+
+MIT / BSD
+
+Author Information
+------------------
+
+This role was created by [Iuri Gagnidze](https://www.github.com/ocha)

@@ -1,0 +1,20 @@
+---
+- name: Check if YARN repo is already configured.
+  stat: path={{ yarn_rhel_repofile_path }}
+  register: yarn_repofile_result
+
+- name: Install YARN repo.
+  yum:
+    name: "{{ yarn_rhel_repo_url }}"
+    state: present
+  register: result
+  until: '"failed" not in result'
+  retries: 5
+  delay: 10
+  when: not yarn_repofile_result.stat.exists
+
+- name: Import EPEL GPG key.
+  rpm_key:
+    key: "{{ yarn_rhel_repo_gpg_key_url }}"
+    state: present
+  when: not yarn_repofile_result.stat.exists

@@ -69,7 +69,7 @@ script:
     || (echo 'Idempotence test: fail' && exit 1)
 
   # Ensure YARN is installed.
-  - 'docker exec --tty "$(cat ${container_id})" env TERM=xterm which yarn'
+  - docker exec --tty "$(cat ${container_id})" env TERM=xterm which yarn
 
 notifications:
   webhooks: https://galaxy.ansible.com/api/v1/notifications/

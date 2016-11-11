@@ -6,7 +6,7 @@
 - name: Install YARN repo.
   apt_repository:
     repo: "deb {{ yarn_debian_repo_url }}"
-    filename: "yarn.list"
+    filename: "yarn"
     state: present
   register: result
   until: '"failed" not in result'

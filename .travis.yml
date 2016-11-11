@@ -23,10 +23,6 @@ sudo: required
 services:
   - docker
 
-branches:
-  only:
-  - master
-
 before_install:
   # Pull container from Docker Hub.
   - 'docker pull geerlingguy/docker-${distro}-ansible:latest'

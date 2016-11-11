@@ -1,9 +1,9 @@
 Ansible Role: YARN Repository
 =========
 
-[![Build Status](https://travis-ci.org/ocha/ansible-role-repo-yarn.svg?branch=master)](https://travis-ci.org/ocha/ansible-role-repo-yarn)
+[![Build Status](https://travis-ci.org/ocha/ansible-role-yarn.svg?branch=master)](https://travis-ci.org/ocha/ansible-role-yarn)
 
-Installs the [YARN repository](https://yarnpkg.com) for Ubuntu/RHEL/CentOS.
+Installs the [YARN Package Manager](https://yarnpkg.com) for Ubuntu/RHEL/CentOS.
 
 Requirements
 ------------
@@ -35,7 +35,7 @@ Including an example of how to use your role (for instance, with variables passe
 
     - hosts: servers
       roles:
-         - ocha.repo-yarn
+         - ocha.yarn
 
 License
 -------

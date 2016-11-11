@@ -3,7 +3,7 @@
   stat: path={{ yarn_rhel_repofile_path }}
   register: yarn_repofile_result
 
-- name: Install YARN repo.
+- name: Install YARN YUM repo.
   get_url:
     url: "{{ yarn_rhel_repo_url }}"
     dest: "{{ yarn_rhel_repofile_path }}"

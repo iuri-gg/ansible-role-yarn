@@ -3,10 +3,9 @@
   stat: path={{ yarn_debian_repofile_path }}
   register: yarn_repofile_result
 
-- name: Install YARN repo.
-  apt_repository:
-    repo: "deb {{ yarn_debian_repo_url }}"
-    filename: "yarn"
+- name: Import YARN APT key.
+  apt_key:
+    url: "{{ yarn_debian_repo_gpg_key_url }}"
     state: present
   register: result
   until: '"failed" not in result'
@@ -14,9 +13,10 @@
   delay: 5
   when: not yarn_repofile_result.stat.exists
 
-- name: Import YARN APT key.
-  apt_key:
-    url: "{{ yarn_debian_repo_gpg_key_url }}"
+- name: Install YARN APT repo.
+  apt_repository:
+    repo: "deb {{ yarn_debian_repo_url }}"
+    filename: "yarn"
     state: present
   register: result
   until: '"failed" not in result'

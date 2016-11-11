@@ -4,9 +4,10 @@
   register: yarn_repofile_result
 
 - name: Install YARN repo.
-  yum:
-    name: "{{ yarn_rhel_repo_url }}"
-    state: present
+  get_url:
+    url: "{{ yarn_rhel_repo_url }}"
+    dest: "{{ yarn_rhel_repofile_path }}"
+    mode: 0644
   register: result
   until: '"failed" not in result'
   retries: 3

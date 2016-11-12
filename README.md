@@ -2,7 +2,7 @@ Ansible Role: YARN Repository
 =========
 
 [![Build Status](https://travis-ci.org/ocha/ansible-role-yarn.svg?branch=master)](https://travis-ci.org/ocha/ansible-role-yarn)
-[![Ansible Galaxy](https://img.shields.io/ansible/role/13307.svg)](https://galaxy.ansible.com/ocha/yarn/)
+[![Ansible Galaxy](https://img.shields.io/ansible/role/13308.svg)](https://galaxy.ansible.com/ocha/yarn/)
 
 Installs the [YARN Package Manager](https://yarnpkg.com) for Ubuntu/RHEL/CentOS.
 

@@ -9,7 +9,8 @@ Installs the [YARN Package Manager](https://yarnpkg.com) for Ubuntu/RHEL/CentOS.
 Requirements
 ------------
 
-This role only runs on Ubuntu, RHEL and its derivatives
+This role only runs on Ubuntu, RHEL and its derivatives.
+It requires EPEL repo on RHEL so it can install NodeJS.
 
 Role Variables
 --------------

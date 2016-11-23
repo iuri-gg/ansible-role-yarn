@@ -19,3 +19,6 @@
     key: "{{ yarn_rhel_repo_gpg_key_url }}"
     state: present
   when: not yarn_repofile_result.stat.exists
+
+- name: Install NodeJS package for yarn dependency
+  package: name=nodejs state=latest

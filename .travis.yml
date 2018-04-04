@@ -45,7 +45,7 @@ script:
     --syntax-check
 
   # Test role.
-  - 'docker exec "$(cat ${container_id})" ansible-playbook /etc/ansible/roles/role_under_test/tests/test.yml'
+  - 'docker exec "$(cat ${container_id})" ansible-playbook /etc/ansible/roles/role_under_test/tests/test.yml -vvvv'
 
   # Run the role/playbook again, checking to make sure it's idempotent.
   - idempotence=$(mktemp)

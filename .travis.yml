@@ -34,6 +34,9 @@ install:
   # Run container detached, with our role mounted inside.
   - 'docker run --detach --volume="${PWD}":/etc/ansible/roles/role_under_test:ro ${run_opts} geerlingguy/docker-${distro}-ansible:latest "${init}" > "${container_id}"'
 
+  - if [[ "${distro}" == ubuntu* ]]; then docker exec "$(cat ${container_id})" apt-get -qq update; fi
+  - if [[ "${distro}" == ubuntu* ]]; then docker exec "$(cat ${container_id})" apt-get install -y apt-transport-https; fi
+
 script:
   # Basic role syntax check
   - >

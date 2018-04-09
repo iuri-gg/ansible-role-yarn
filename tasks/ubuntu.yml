@@ -7,10 +7,6 @@
   apt_key:
     url: "{{ yarn_debian_repo_gpg_key_url }}"
     state: present
-  register: result
-  until: '"failed" not in result'
-  retries: 3
-  delay: 5
   when: not yarn_repofile_result.stat.exists
 
 - name: Install YARN APT repo.
@@ -18,8 +14,4 @@
     repo: "deb {{ yarn_debian_repo_url }}"
     filename: "yarn"
     state: present
-  register: result
-  until: '"failed" not in result'
-  retries: 3
-  delay: 5
   when: not yarn_repofile_result.stat.exists

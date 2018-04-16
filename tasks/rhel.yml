@@ -1,24 +1,12 @@
 ---
-- name: Check if YARN repo is already configured.
-  stat: path={{ yarn_rhel_repofile_path }}
-  register: yarn_repofile_result
-
 - name: Install YARN YUM repo.
-  get_url:
-    url: "{{ yarn_rhel_repo_url }}"
-    dest: "{{ yarn_rhel_repofile_path }}"
-    mode: 0644
-  register: result
-  until: '"failed" not in result'
-  retries: 3
-  delay: 5
-  when: not yarn_repofile_result.stat.exists
-
-- name: Import YARN GPG key.
-  rpm_key:
-    key: "{{ yarn_rhel_repo_gpg_key_url }}"
+  yum_repository:
+    name: Yarn Repository
+    baseurl: "{{ yarn_rhel_repo_url }}"
+    enabled: yes
+    gpgcheck: yes
+    yarn_rhel_repo_gpg_key_url: "{{ yarn_rhel_repo_url }}"
     state: present
-  when: not yarn_repofile_result.stat.exists
 
 - name: Install NodeJS package for yarn dependency
   package: name=nodejs state=latest

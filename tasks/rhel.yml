@@ -1,11 +1,12 @@
 ---
 - name: Install YARN YUM repo.
   yum_repository:
-    name: Yarn Repository
+    name: yarn
+    description: Yarn Repository
     baseurl: "{{ yarn_rhel_repo_url }}"
     enabled: yes
     gpgcheck: yes
-    yarn_rhel_repo_gpg_key_url: "{{ yarn_rhel_repo_url }}"
+    gpgcakey: "{{ yarn_rhel_repo_gpg_key_url }}"
     state: present
 
 - name: Install NodeJS package for yarn dependency

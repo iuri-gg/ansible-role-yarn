@@ -6,7 +6,7 @@
     baseurl: "{{ yarn_rhel_repo_url }}"
     enabled: yes
     gpgcheck: yes
-    gpgcakey: "{{ yarn_rhel_repo_gpg_key_url }}"
+    gpgkey: "{{ yarn_rhel_repo_gpg_key_url }}"
     state: present
 
 - name: Install NodeJS package for yarn dependency

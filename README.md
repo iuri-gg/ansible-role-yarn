@@ -17,9 +17,10 @@ Role Variables
 
 Available variables are listed below, along with default values (see `defaults/main.yml`):
 
-    yarn_debian_repo_url: "http://dl.yarnpkg.com/debian/ stable main"
-    yarn_debian_repo_gpg_key_url: "http://dl.yarnpkg.com/debian/pubkey.gpg"
-    yarn_rhel_repo_url: "https://dl.yarnpkg.com/rpm/yarn.repo"
+    yarn_debian_repo_url: "https://dl.yarnpkg.com/debian/ stable main"
+    yarn_debian_repo_gpg_key_url: "https://dl.yarnpkg.com/debian/pubkey.gpg"
+    yarn_debian_repofile_path: "/etc/apt/sources.list.d/yarn.list"
+    yarn_rhel_repo_url: "https://dl.yarnpkg.com/rpm/"
     yarn_rhel_repo_gpg_key_url: "https://dl.yarnpkg.com/rpm/pubkey.gpg"
 
 Generally, these should not be changed, but if this role is out of date, or if you need a very specific version, these can be overridden.

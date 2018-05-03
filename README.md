@@ -19,7 +19,6 @@ Available variables are listed below, along with default values (see `defaults/m
 
     yarn_debian_repo_url: "https://dl.yarnpkg.com/debian/ stable main"
     yarn_debian_repo_gpg_key_url: "https://dl.yarnpkg.com/debian/pubkey.gpg"
-    yarn_debian_repofile_path: "/etc/apt/sources.list.d/yarn.list"
     yarn_rhel_repo_url: "https://dl.yarnpkg.com/rpm/"
     yarn_rhel_repo_gpg_key_url: "https://dl.yarnpkg.com/rpm/pubkey.gpg"
 

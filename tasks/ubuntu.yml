@@ -1,17 +1,17 @@
 ---
-- name: Check if YARN repo is already configured.
-  stat: path={{ yarn_debian_repofile_path }}
-  register: yarn_repofile_result
+- name: Make sure HTTPS is supported by apt
+  package:
+    name: apt-transport-https
+    state: present
 
-- name: Import YARN APT key.
+- name: Import YARN APT key
   apt_key:
     url: "{{ yarn_debian_repo_gpg_key_url }}"
     state: present
-  when: not yarn_repofile_result.stat.exists
 
-- name: Install YARN APT repo.
+- name: Install YARN APT repo
   apt_repository:
     repo: "deb {{ yarn_debian_repo_url }}"
     filename: "yarn"
     state: present
-  when: not yarn_repofile_result.stat.exists
+    update_cache: yes

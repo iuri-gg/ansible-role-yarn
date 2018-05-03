@@ -1,8 +1,9 @@
 ---
 - name: Make sure HTTPS is supported by apt
-  package:
+  apt:
     name: apt-transport-https
     state: present
+    update_cache: yes
 
 - name: Import YARN APT key
   apt_key:

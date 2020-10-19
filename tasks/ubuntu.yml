@@ -9,6 +9,17 @@
   apt_key:
     url: "{{ yarn_debian_repo_gpg_key_url }}"
     state: present
+  when: (http_proxy is undefined) or (http_proxy is none)
+
+- name: Import YARN APT key (proxy)
+  apt_key:
+    url: "{{ yarn_debian_repo_gpg_key_url }}"
+    state: present
+  environment:
+    http_proxy: "{{ http_proxy }}"
+    https_proxy: "{{ https_proxy }}"
+  when: not( (http_proxy is undefined) or (http_proxy is none) )
+        and (http_proxy | length > 0)
 
 - name: Install YARN APT repo
   apt_repository:

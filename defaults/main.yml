@@ -3,3 +3,6 @@ yarn_debian_repo_url: "https://dl.yarnpkg.com/debian/ stable main"
 yarn_debian_repo_gpg_key_url: "https://dl.yarnpkg.com/debian/pubkey.gpg"
 yarn_rhel_repo_url: "https://dl.yarnpkg.com/rpm/"
 yarn_rhel_repo_gpg_key_url: "https://dl.yarnpkg.com/rpm/pubkey.gpg"
+
+http_proxy: 
+https_proxy: "{{ http_proxy }}"

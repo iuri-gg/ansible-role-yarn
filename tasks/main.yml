@@ -1,8 +1,8 @@
 ---
-- include: rhel.yml
+- include_tasks: rhel.yml
   when: ansible_distribution == 'CentOS' or ansible_os_family == 'RedHat' or ansible_distribution == 'Amazon'
 
-- include: ubuntu.yml
+- include_tasks: ubuntu.yml
   when: ansible_distribution == 'Debian' or ansible_distribution == 'Ubuntu'
 
 - name: Install YARN package manager
